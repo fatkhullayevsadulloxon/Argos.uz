@@ -1,0 +1,164 @@
+<template>
+    <div>
+        <section class="servis">
+            <div class="container">
+               <div class="heading">
+                 <h1 class="servis__heading">Interaktiv xizmatlar</h1>
+                 <router-link to="/services">Barcha xizmatlarimiz</router-link>
+               </div>
+                <ul class="list">
+                    <li class="item" v-for="comment in comments" :key="comment.id">
+                       <div class="servis__link-block">
+                         <a class="servis__link" v-bind:href="comment.href">
+                            <div class="flex">
+                                 <img class="img" width="60" v-bind:src="comment.img" :key="comment.id" alt="">
+                            <h3 >{{comment.title}}</h3>
+                            </div>
+                            <hr>
+                        <p>{{comment.text}}</p>
+                        </a>
+                       </div>
+                    </li>
+                </ul>
+                <ul class="list">
+                    <li class="item" v-for="link in links" :key="link.id">
+                       <div class="servis__link-block">
+                         <router-link class="servis__link" v-bind:to="link.href">
+                            <div class="flex">
+                                 <img class="img" width="60" v-bind:src="link.img" :key="link.id" alt="">
+                            <h3 >{{link.title}}</h3>
+                            </div>
+                            <hr>
+                        <p>{{link.text}}</p>
+                         </router-link>
+                       </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</template>
+
+<script>
+export default {
+    name: "services",
+    props: {
+        comments: {
+            type: Array
+        },
+        links: {
+            type: Array
+        }
+    }
+}
+</script>
+
+<style scoped>
+
+        .servis{
+            background-image: url('../assets/img/servis-bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            margin-top: 50px
+        }
+
+        .servis__heading{
+            font-family: sans-serif;
+            font-size: 36px;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .heading{
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .flex{
+            display: flex;
+            align-items: center;
+        }
+
+        .heading a{
+            text-decoration: none;
+            font-family: sans-serif;
+            color:  white;
+            opacity: 0.8;
+        }
+
+        .list{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+        }
+
+        .servis__link-block{
+            background-color: rgb(57, 57, 198);
+            width: 300px !important;
+            height: 130px;
+            cursor: pointer;
+            border-radius: 8px;
+             box-shadow: 16px 16px 16px -20px black;
+             border-top: 8px solid  rgb(7, 7, 177);
+             position: relative;
+             z-index: 2;
+             margin-top: 20px
+        }
+
+
+        .servis__link-block:hover{
+            margin-top: -15px;
+            transition: all 0.3s ease 0s;
+            -webkit-transition: all 0.3s ease 0s;
+        }
+
+        .servis__link-block::after{
+            content: "";
+            height: 0; 
+            left: 0; 
+            top: 0; 
+            width: 100%;  
+            position: absolute; 
+            transition: all 0.3s ease 0s; 
+            -webkit-transition: all 0.3s ease 0s; 
+            z-index: -1;
+        }
+
+        .servis__link-block:hover::after{ height: 100%; }
+        .servis__link-block::after{ background:#fff; }
+
+        .servis__link-block p{
+            color:  rgb(7, 7, 177);
+            font-family: sans-serif;
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+
+        .servis__link-block h3{
+            color:  rgb(7, 7, 177);
+            font-family: sans-serif;
+            margin-top: 10px;
+            margin-left: 5px
+        }
+
+        .servis__link-block hr{
+            color:  white;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 5px
+        }
+
+        .servis__link-block img{
+            margin-left: 20px;
+            margin-top: 20px
+        }
+
+        .servis__link{
+            text-decoration: none;
+        }
+
+</style>

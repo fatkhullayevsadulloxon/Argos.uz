@@ -1,21 +1,18 @@
 <template>
-    <div class="">
-    <menu-modal v-model:show="modalVisible">
+    <div>
+     <menu-modal v-model:show="modalVisible">
       <burger-menu :hideModal="hideModal"/>
     </menu-modal>
           <Header/>
           <Navbar :showModal="showModal"/>
-          <hero/> 
     </div>
-   
-</template>
-
+</template> 
 <script>
-  import Header from "./components/Header"
-  import Navbar from "./components/Navbar"
-  import MenuModal from "./components/MenuModal"
-  import burgerMenu from "./components/burgerMenu"
-  import hero from "./components/hero"
+import Header from "./components/Header.vue"
+import Navbar from "./components/Navbar.vue"
+import MenuModal from "./components/MenuModal.vue"
+import burgerMenu from "./components/burgerMenu.vue"
+
 export default {
     name: "App",
     components : {
@@ -23,11 +20,10 @@ export default {
       Navbar,
       MenuModal,
       burgerMenu,
-      hero
     },
     data() {
       return {
-          modalVisible: false  
+          modalVisible: false,        
       }
     },
     methods: {
@@ -40,23 +36,3 @@ export default {
     },
 }
 </script>
-
-
-
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-
-  *{
-    margin: 0;
-    padding: 0
-  }
-
-  .container{
-    width: 1250px;
-    margin: 0 auto;
-    padding: 0 20px
-  }
-</style>
-
-
-

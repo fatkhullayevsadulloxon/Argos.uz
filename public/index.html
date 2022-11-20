@@ -13,5 +13,15 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("li").on("click", function() {
+          $(this).siblings().removeClass("active")
+          $(this).addClass("active")
+        })
+      })
+    </script>
   </body>
 </html>
