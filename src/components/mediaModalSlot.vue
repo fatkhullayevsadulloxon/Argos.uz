@@ -36,6 +36,6 @@ export default {
        margin: 0 auto;
        background:   rgb(214, 210, 210);
        padding: 20px;
-        height: 200px;
+        height: 300px;
     }
 </style>

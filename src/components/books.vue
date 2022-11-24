@@ -34,65 +34,65 @@ export default {
 
 <style scoped>
     .books__heading{
-        padding-top: 26px;
-        padding-bottom: 26px;
-        font-family: sans-serif;
-        font-size: 30px
+        padding-top: 26px !important;
+        padding-bottom: 26px !important;
+        font-family: sans-serif !important;
     }
 
     .books__container{
-        display: flex;
-        align-items: center;
-        justify-content: space-between
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important
     }
 
     .books__list{
-        width: 370px;
-        background-color: white;
-        height: 95px;
-        border-radius: 5px
+        width: 370px !important;
+        background-color: white !important;
+        height: 95px !important;
+        border-radius: 5px !important;
+        transition: background-color 0.3s;
     }
 
     .books__list:hover{
-        background-color: rgb(213, 213, 213);
-        transition: ease-in-out 0.2s
+        background-color: rgb(213, 213, 213) !important;
+        transition: ease-in-out 0.2s !important
     }
 
     .books__link{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        text-decoration: none
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        text-decoration: none !important
     }
 
     .books__link h4{
-        font-family: sans-serif;
-        color: gray;
-        opacity: 0.9;
+        font-family: sans-serif !important;
+        color: gray !important;
+        opacity: 0.9 !important;
     }
 
     .books__link p{
-        color: gray;
-        opacity: 0.7;
-        margin-top: 5px
+        color: gray !important;
+        opacity: 0.7!important;
+        margin-top: 5px !important
     }
 
     .books__link img{
-        margin-left: 5px;
-        margin-top: 10px
+        margin-left: 5px !important;
+        margin-top: 10px !important
     }
 
     .flex{
-        margin-left: 10px;
-        margin-top: 20px
+        margin-left: 10px !important;
+        margin-top: 20px !important
     }
 
     .books__img{
-        background-color: white;
-         box-shadow: 5px 5px 10px -5px black;
-         width: 90px;
-         height: 60px;
-         margin-left: 20px
+        background-color: white !important;
+         box-shadow: 5px 5px 10px -5px black !important;
+         width: 90px !important;
+         height: 60px !important;
+         margin-left: 20px !important
     }
 </style>
 

@@ -21,15 +21,15 @@
                     </li>
                 </ul>
                 <ul class="list">
-                    <li class="item" v-for="link in links" :key="link.id">
+                    <li class="item" v-for="servis in services" :key="servis.id">
                        <div class="servis__link-block">
-                         <router-link class="servis__link" v-bind:to="link.href">
+                         <router-link class="servis__link" v-bind:to="servis.href">
                             <div class="flex">
-                                 <img class="img" width="60" v-bind:src="link.img" :key="link.id" alt="">
-                            <h3 >{{link.title}}</h3>
+                                 <img class="img" width="60" v-bind:src="servis.img" :key="servis.id" alt="">
+                            <h3 >{{servis.title}}</h3>
                             </div>
                             <hr>
-                        <p>{{link.text}}</p>
+                        <p>{{servis.text}}</p>
                          </router-link>
                        </div>
                     </li>
@@ -46,7 +46,7 @@ export default {
         comments: {
             type: Array
         },
-        links: {
+        services: {
             type: Array
         }
     }
@@ -60,7 +60,7 @@ export default {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            height: 400px;
+            height: 500px;
             margin-top: 50px
         }
 
@@ -68,7 +68,7 @@ export default {
             font-family: sans-serif;
             font-size: 36px;
             color: white;
-            padding: 10px 0;
+            padding-top: 40px
         }
 
         .heading{
@@ -97,23 +97,24 @@ export default {
         }
 
         .servis__link-block{
-            background-color: rgb(57, 57, 198);
-            width: 300px !important;
-            height: 130px;
+            background-color: #1E2F97;
+            width: 280px !important;
+            height: 150px;
             cursor: pointer;
             border-radius: 8px;
              box-shadow: 16px 16px 16px -20px black;
              border-top: 8px solid  rgb(7, 7, 177);
              position: relative;
              z-index: 2;
-             margin-top: 20px
+             margin-top: 20px;
+              transition: margin-top 0.5s;
         }
 
 
         .servis__link-block:hover{
             margin-top: -15px;
             transition: all 0.3s ease 0s;
-            -webkit-transition: all 0.3s ease 0s;
+            width: 300px;
         }
 
         .servis__link-block::after{
@@ -132,14 +133,22 @@ export default {
         .servis__link-block::after{ background:#fff; }
 
         .servis__link-block p{
-            color:  rgb(7, 7, 177);
+            color:  white;
             font-family: sans-serif;
             margin-left: 20px;
             margin-top: 15px;
         }
 
+        .servis__link-block:hover h3{
+            color: #1E2F97
+        }
+
+        .servis__link-block:hover p{
+            color: #1E2F97
+        }
+
         .servis__link-block h3{
-            color:  rgb(7, 7, 177);
+            color:  white;
             font-family: sans-serif;
             margin-top: 10px;
             margin-left: 5px
