@@ -70,11 +70,12 @@ export default {
         text-decoration: none;
         font-family:  sans-serif;
         color: rgb(117, 115, 115);
+        transition: border-bottom 0.3s 
     }
 
     .link:hover{
         border-bottom: 3px solid green;
-        animation-delay: 0.4s
+        transition: all 0.3s
     }
 
     .item button{

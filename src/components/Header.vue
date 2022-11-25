@@ -44,8 +44,8 @@ export default {
         border: 1px solid rgb(130, 130, 130);
         background-color: transparent;
         font-family: "Mulish" sans-serif;
-        width: 100px !important;
-        height: 30px;
+        width: 150px !important;
+        height: 50px;
         border-radius: 5px;
     }
 

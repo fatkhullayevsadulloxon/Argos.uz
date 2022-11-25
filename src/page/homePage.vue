@@ -5,13 +5,15 @@
           <services :images="images" :comments="comments" :services="services"/>
           <books :books="books"/>
           <media :mediaModal="mediaModal"/>
-          <media-modal-slot v-model:media="modalVisible" >
+          <media-modal-slot v-model:media="modalVisible">
               <media-content-modal/>
           </media-modal-slot>
           <region/>
           <vacancy :vacancy="vacancy"/>
           <theme :themes="themes"/>
           <winner :winners="winners"/>
+         <links :links="links"/>
+         <vacancy-bottom :vacancyBottom="vacancyBottom"/>
     </div>
    
 </template>
@@ -28,7 +30,8 @@
   import vacancy from "../components/vacancy"
   import theme from "../components/theme"
   import winner from "../components/winner"
-  import link from "../components/link"
+  import links from "../components/link"
+  import vacancyBottom from "../components/vacancyBottom"
 export default {
     name: "homePage",
     components : {
@@ -43,7 +46,8 @@ export default {
       vacancy,
       theme,
       winner,
-      link
+      links,
+      vacancyBottom
     },
     data() {
       return {     
@@ -87,13 +91,19 @@ export default {
             {href: "/press-center/winner/21",img: "https://argos.uz/media/winner/image_2021-12-23_17-06-03_UeHUk1z.jpg", desc: "Tanlov g'olibi", name: "Bobur Xasanov", motiv: "O'z ustimda ishladim, rivojlandim"},
           ],
           links: [
-            {img: "https://static.wixstatic.com/media/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png/v1/fill/w_1000,h_1015,al_c,usm_0.66_1.00_0.01/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png", title: "Ozbekiston Respublikasi Prezidentining matbuot xizmati", href: "https://president.uz/"},
-            {img: "https://centertsul.uz/files/polezniye_ssilki/logo_data_gov_uz_2.png", title: "Ozbekiston Respublikasi Ochiq ma'lumotlar portali", href: "https://data.gov.uz/uz"},
-            {img: "https://statefund.uz/core/views/47a62d302c/media/img/uploads/mygovuz_icon.png", title: "Yagona Interaktiv davlat xizmat portali", href: "https://my.gov.uz/ru"},
-            {img: "https://static.wixstatic.com/media/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png/v1/fill/w_1000,h_1015,al_c,usm_0.66_1.00_0.01/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png", title: "Ozbekiston Respublikasi Oliy Majlis Senati", href: "https://senat.uz/ru"},
-            {img: "https://nbuig.uz/wp-content/uploads/2021/09/LEX.UZ-Zakonodatelstvo-Uzbekistana.png", title: "Ozbekiston Respublikasi Qonun hujjatlari ma'lumotlar ba'zasi", href: "https://lex.uz/"},
-            {img: "https://static.wixstatic.com/media/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png/v1/fill/w_1000,h_1015,al_c,usm_0.66_1.00_0.01/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png", title: "Ozbekiston Respublikasi hukumat portali", href: "https://www.gov.uz/uz"},
-          ]
+            {domen: "www.president.uz",img: "https://static.wixstatic.com/media/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png/v1/fill/w_1000,h_1015,al_c,usm_0.66_1.00_0.01/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png", title: "Ozbekiston Respublikasi Prezidentining matbuot xizmati", href: "https://president.uz/"},
+            {domen: "data.gov.uz",img: "https://centertsul.uz/files/polezniye_ssilki/logo_data_gov_uz_2.png", title: "Ozbekiston Respublikasi Ochiq ma'lumotlar portali", href: "https://data.gov.uz/uz"},
+            {domen: "my.gov.uz",img: "https://statefund.uz/core/views/47a62d302c/media/img/uploads/mygovuz_icon.png", title: "Yagona Interaktiv davlat xizmat portali", href: "https://my.gov.uz/ru"},
+            {domen: "www.senat.uz",img: "https://static.wixstatic.com/media/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png/v1/fill/w_1000,h_1015,al_c,usm_0.66_1.00_0.01/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png", title: "Ozbekiston Respublikasi Oliy Majlis Senati", href: "https://senat.uz/ru"},
+            {domen: "www.lex.uz",img: "https://nbuig.uz/wp-content/uploads/2021/09/LEX.UZ-Zakonodatelstvo-Uzbekistana.png", title: "Ozbekiston Respublikasi Qonun hujjatlari ma'lumotlar ba'zasi", href: "https://lex.uz/"},
+            {domen: "www.gov.uz",img: "https://static.wixstatic.com/media/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png/v1/fill/w_1000,h_1015,al_c,usm_0.66_1.00_0.01/f6a2ad_5e0bce7a6f804dfcb3c500aa96a04972~mv2.png", title: "Ozbekiston Respublikasi hukumat portali", href: "https://www.gov.uz/uz"},
+          ],
+          vacancyBottom: [
+            {img: "https://avatars.mds.yandex.net/i?id=464524f15658507f06e0d36c026adcd9-4633663-images-thumbs&n=13", title: "Davlat fuqarolik xizmatchilari vakant lavozimlarining yagona ochiq portali rasmiy", href: "https://t.me/vacancy_argos", domen: "t.me/vacancy_argos"},
+            {img: "", title: "Ochiq tanlovlar jarayonlarini onlayn kuzatish tanishib borish bot", href: "https://t.me/vacancyonline", domen: "t.me/vacancyonline"},
+            {img: "", title: "Vakant lavozimlar uchun o‘tkazilgan ochiq mustaqil tanlovlar g‘oliblari bilan ", href: "https://t.me/vacancy_winners", domen: "t.me/vacancy_winners"},
+            {img: "", title: "Ochiq tanlovlar yuzasidan taklif va muammolarni qabul qiluvchi bot", href: "https://t.me/vacancy_argos_bot", domen: "t.me/vacancy_argos_bot"},
+          ] 
       }
     },
     methods: {
