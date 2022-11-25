@@ -14,6 +14,7 @@
           <winner :winners="winners"/>
          <links :links="links"/>
          <vacancy-bottom :vacancyBottom="vacancyBottom"/>
+         <footer/>
     </div>
    
 </template>
@@ -32,6 +33,7 @@
   import winner from "../components/winner"
   import links from "../components/link"
   import vacancyBottom from "../components/vacancyBottom"
+  import footer from "../components/footer"
 export default {
     name: "homePage",
     components : {
@@ -47,7 +49,8 @@ export default {
       theme,
       winner,
       links,
-      vacancyBottom
+      vacancyBottom,
+      footer
     },
     data() {
       return {     
