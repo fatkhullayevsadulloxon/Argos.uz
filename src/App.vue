@@ -5,7 +5,7 @@
     </menu-modal>
           <Header/>
           <Navbar :showModal="showModal"/>
-          
+          <footerg/>
     </div>
 </template> 
 <script>
@@ -13,6 +13,7 @@ import Header from "./components/Header.vue"
 import Navbar from "./components/Navbar.vue"
 import MenuModal from "./components/MenuModal.vue"
 import burgerMenu from "./components/burgerMenu.vue"
+import footerg from "./components/footer.vue"
 
 
 export default {
@@ -22,7 +23,7 @@ export default {
       Navbar,
       MenuModal,
       burgerMenu,
-
+      footerg,
     },
     data() {
       return {

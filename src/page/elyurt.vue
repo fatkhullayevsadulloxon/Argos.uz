@@ -2,13 +2,13 @@
     <div>
        <h1 class="direct">Directed by</h1>
        <h1 class="uic">UIC GROUP</h1>
-       <h1>about page</h1>
+       <h1>Faoliyat page</h1>
     </div>
 </template>
 
 <script>
 export default {
-    name: "about"
+    name: "elyurt"
 }
 </script>
 

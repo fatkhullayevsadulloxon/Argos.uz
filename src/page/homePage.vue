@@ -14,7 +14,6 @@
           <winner :winners="winners"/>
          <links :links="links"/>
          <vacancy-bottom :vacancyBottom="vacancyBottom"/>
-         <footer/>
     </div>
    
 </template>
@@ -33,7 +32,6 @@
   import winner from "../components/winner"
   import links from "../components/link"
   import vacancyBottom from "../components/vacancyBottom"
-  import footer from "../components/footer"
 export default {
     name: "homePage",
     components : {
@@ -49,8 +47,7 @@ export default {
       theme,
       winner,
       links,
-      vacancyBottom,
-      footer
+      vacancyBottom
     },
     data() {
       return {     
@@ -103,9 +100,9 @@ export default {
           ],
           vacancyBottom: [
             {img: "https://avatars.mds.yandex.net/i?id=464524f15658507f06e0d36c026adcd9-4633663-images-thumbs&n=13", title: "Davlat fuqarolik xizmatchilari vakant lavozimlarining yagona ochiq portali rasmiy", href: "https://t.me/vacancy_argos", domen: "t.me/vacancy_argos"},
-            {img: "", title: "Ochiq tanlovlar jarayonlarini onlayn kuzatish tanishib borish bot", href: "https://t.me/vacancyonline", domen: "t.me/vacancyonline"},
-            {img: "", title: "Vakant lavozimlar uchun o‘tkazilgan ochiq mustaqil tanlovlar g‘oliblari bilan ", href: "https://t.me/vacancy_winners", domen: "t.me/vacancy_winners"},
-            {img: "", title: "Ochiq tanlovlar yuzasidan taklif va muammolarni qabul qiluvchi bot", href: "https://t.me/vacancy_argos_bot", domen: "t.me/vacancy_argos_bot"},
+            {img: "https://avatars.mds.yandex.net/i?id=19f87fa4ba684bac4bda8dd2ab204477-5354237-images-thumbs&n=13", title: "Ochiq tanlovlar jarayonlarini onlayn kuzatish tanishib borish bot", href: "https://t.me/vacancyonline", domen: "t.me/vacancyonline"},
+            {img: "https://avatars.mds.yandex.net/i?id=2a0000017a11571a55f2c1c48f8c8a707407-4432920-images-thumbs&n=13", title: "Vakant lavozimlar uchun o‘tkazilgan ochiq mustaqil tanlovlar g‘oliblari bilan ", href: "https://t.me/vacancy_winners", domen: "t.me/vacancy_winners"},
+            {img: "https://avatars.mds.yandex.net/i?id=8858d539ef97340bf513a6afe4cf6b0c-5235802-images-thumbs&n=13", title: "Ochiq tanlovlar yuzasidan taklif va muammolarni qabul qiluvchi bot", href: "https://t.me/vacancy_argos_bot", domen: "t.me/vacancy_argos_bot"},
           ] 
       }
     },

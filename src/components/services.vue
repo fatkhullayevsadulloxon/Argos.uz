@@ -8,7 +8,7 @@
                </div>
                 <ul class="list">
                     <li class="item" v-for="comment in comments" :key="comment.id">
-                       <div class="servis__link-block">
+                       <div class="servis__link-block wow fadeInLeft" data-wow-delay="0.4s" data-wow-duration="0.6s">
                          <a class="servis__link" v-bind:href="comment.href">
                             <div class="flex">
                                  <img class="img" width="60" v-bind:src="comment.img" :key="comment.id" alt="">
