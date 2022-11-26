@@ -1,7 +1,7 @@
 <template>
     <div>
-       <h1 class="direct">Directed by</h1>
-       <h1 class="uic">UIC GROUP</h1>
+       <h1 class="direct">Designed by</h1>
+       <img class="uic" src="https://uic.group/uic-images/about/about-uic-logo.svg" alt="">
        <h1>Faoliyat page</h1>
     </div>
 </template>
@@ -26,7 +26,7 @@ export default {
         margin: 0;
     }
 
-    .uic{
-        font-size: 36px
+        .uic{
+        margin-left: 450px
     }
 </style>
